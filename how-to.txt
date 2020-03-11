@@ -1,0 +1,2 @@
+1. docker-compose up -d --build
+2. ssh sshuser@localhost -p 1022 -i id_rsa

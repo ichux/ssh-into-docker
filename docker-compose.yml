@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  serve:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nginx_ssh
+    ports:
+      - "80:80"
+      - "1022:22"
