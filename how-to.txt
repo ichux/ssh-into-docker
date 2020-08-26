@@ -1,2 +1,6 @@
-1. docker-compose up -d --build
-2. ssh sshuser@localhost -p 1022 -i id_rsa
+1. docker build -t nginx-ssh-2 .
+2. docker run --rm -p 2222:22 -d --name=ns2 nginx-ssh-2
+# remove any presense of login that might give login issues
+3. ssh-keygen -f "/home/pc/.ssh/known_hosts" -R "[localhost]:2222"
+4. ssh root@localhost -p 2222
+5. docker stop ns2
